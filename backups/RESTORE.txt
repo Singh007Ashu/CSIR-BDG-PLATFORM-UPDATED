@@ -1,0 +1,14 @@
+PRIVATE LIVE-DATA BACKUP — 26 October 2026
+
+csir-bdg-2026-10-26.sqlite is a consistent SQLite backup of the running platform database. SQLite integrity_check passed before upload.
+
+It contains live application records and account authentication hashes. Keep this repository PRIVATE. Do not publish, fork publicly, or redistribute this backup. Changing repository visibility later would expose historical copies too.
+
+Restore:
+1. Stop the destination application.
+2. Preserve a separate backup of its current prisma/dev.db and associated SQLite journal/WAL files. Do not overwrite a running database.
+3. Copy this snapshot to prisma/dev.db in a fresh deployment of the matching source version.
+4. Configure DATABASE_URL="file:./dev.db" in the destination .env and provide a new strong SESSION_SECRET. Keep .env out of Git.
+5. Install dependencies / generate Prisma client and start the application. Do not run reset or seed scripts over the restored database.
+
+Existing account hashes are retained; plaintext passwords are not exported. Users may need to sign in again. This snapshot does not contain uploaded documents, FICCI source documents, environment secrets or API keys. File records will require the corresponding separately transferred storage files.
