@@ -1,0 +1,4 @@
+# Copy to .dev.vars only for local Cloudflare preview. Never commit real secrets.
+SESSION_SECRET=replace-with-at-least-32-random-characters
+OPENAI_API_KEY=
+OPENAI_ANALYSIS_MODEL=gpt-5-mini

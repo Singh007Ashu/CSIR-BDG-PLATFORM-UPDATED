@@ -1,0 +1,5 @@
+Full application source exported from the running C:\CSIR\BDG-V2-NEW installation on 26 October 2026.
+Includes Next.js frontend/API backend, shared libraries, Python matchmaking, Prisma schema and seed scripts, master technology seed dataset, public design assets, package lockfile and deployment scripts.
+Excluded: live .env/secrets, credentials exports, live databases, D1 seed.sql database dump, uploaded files, FICCI document collection, node_modules, generated Prisma clients, build output and logs. This is a SOURCE package, not a live-data backup. FICCI seed scripts require the separately supplied FICCI document collection.
+Local setup: extract to a short path; copy .env.example to .env; set a new SESSION_SECRET and ADMIN_PASSWORD; run npm.cmd ci, npx.cmd prisma db push, then the required database seed scripts listed in package.json. Do not run the complete setup command without the FICCI files. Run npm.cmd run dev for development.
+Seed scripts may contain development default passwords. Replace these with secure environment-provided passwords before any public deployment. Existing live account passwords and uploaded records are not restored by this archive.
